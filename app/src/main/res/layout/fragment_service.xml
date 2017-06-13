@@ -1,0 +1,275 @@
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:divider="#ccc6c6"
+    android:dividerPadding="3dp"
+    android:nestedScrollingEnabled="true">
+
+
+    <Button
+        android:id="@+id/btnnext2"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="fill_horizontal"
+        android:layout_margin="5dip"
+        android:padding="5dip"
+        android:text="Next >" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="textEnd">
+
+        <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_row="0"
+                android:text="CCTV :" />
+
+            <Switch
+                android:id="@+id/swcctv"
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_row="0"
+                android:checked="false"
+                android:textOff="No"
+                android:textOn="Yes" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_row="1"
+
+                android:text="Solar panel :" />
+
+            <Switch
+                android:id="@+id/swSolar"
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_row="1"
+
+                android:textOff="No"
+                android:textOn="Yes" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_row="2"
+
+                android:text="Intercom system :" />
+
+            <Switch
+
+                android:id="@+id/swintercomm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_row="2"
+
+                android:textOff="No"
+                android:textOn="Yes" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_row="3"
+
+                android:text="Network :" />
+
+            <Switch
+
+                android:id="@+id/switnetwork"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_row="3"
+
+                android:textOff="No"
+                android:textOn="Yes" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_row="4"
+
+                android:text="wifi :" />
+
+            <Switch
+
+                android:id="@+id/swwifi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_row="4"
+
+                android:textOff="No"
+                android:textOn="Yes" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_row="5"
+
+                android:text="System software :" />
+
+            <Switch
+
+                android:id="@+id/swsoft"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_row="5"
+
+                android:textOff="No"
+                android:textOn="Yes" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_row="6"
+
+                android:text="Web site :" />
+
+            <Switch
+
+                android:id="@+id/swweb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_row="6"
+
+                android:textOff="No"
+                android:textOn="Yes" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_row="7"
+
+                android:text="Computers :" />
+
+            <Switch
+
+                android:id="@+id/swcom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_row="7"
+
+                android:textOff="No"
+                android:textOn="Yes" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_row="8"
+
+                android:text="Printers :" />
+
+            <Switch
+
+                android:id="@+id/swprinter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_row="8"
+
+                android:textOff="No"
+                android:textOn="Yes" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_row="9"
+
+                android:text="Toners :" />
+
+            <Switch
+
+                android:id="@+id/swtoner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_row="9"
+
+                android:textOff="No"
+                android:textOn="Yes" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_row="10"
+
+                android:text="Ribbons :" />
+
+            <Switch
+
+                android:id="@+id/swribbon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_row="10"
+
+                android:textOff="No"
+                android:textOn="Yes" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_row="12"
+
+                android:text="Ink bottles :" />
+
+            <Switch
+
+                android:id="@+id/swinks"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_row="12"
+
+                android:textOff="No"
+                android:textOn="Yes" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+
+                android:layout_row="13"
+
+                android:text="Notes :" />
+
+            <EditText
+                android:id="@+id/txtservicenotes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_row="13"
+                android:hint="Extra informations" />
+
+        </GridLayout>
+    </ScrollView>
+</TableLayout>

@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">RCIS CRM</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nextbtn"><![CDATA[Next >]]></string>
+
+    <string-array name="channels_arrays">
+        <item>4ch</item>
+        <item>8ch</item>
+        <item>16ch</item>
+        <item>24ch</item>
+    </string-array>
+
+    <string-array name="invetertypes">
+        <item>String</item>
+        <item>Central</item>
+        <item>Micro</item>
+        <item>Battery-based</item>
+    </string-array>
+
+    <string-array name="mettype">
+        <item>Toner</item>
+        <item>Ribbon</item>
+        <item>Cartrage</item>
+        <item>Ink</item>
+    </string-array>
+
+    <string-array name="gp">
+        <item>Goverment</item>
+        <item>Private</item>
+    </string-array>
+
+
+</resources>

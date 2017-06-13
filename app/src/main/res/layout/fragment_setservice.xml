@@ -1,0 +1,31 @@
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:divider="#ccc6c6"
+    android:dividerPadding="3dp"
+    android:nestedScrollingEnabled="true">
+
+
+    <Button
+        android:id="@+id/btnfinish"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="fill_horizontal"
+        android:text="Finish" />
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:tag="sets">
+
+        <GridLayout
+            android:id="@+id/setmain"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:columnCount="1"
+            android:rowCount="12"
+            android:layout_marginBottom="3dp">
+
+        </GridLayout>
+    </ScrollView>
+</TableLayout>

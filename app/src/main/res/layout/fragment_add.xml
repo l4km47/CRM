@@ -1,0 +1,19 @@
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:divider="#ccc6c6"
+    android:dividerPadding="3dp"
+    android:nestedScrollingEnabled="true">
+
+
+    <Button
+        android:id="@+id/btnnext"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="fill_horizontal"
+        android:layout_margin="5dip"
+        android:padding="5dip"
+        android:text="Next >" />
+
+   <include layout="@layout/scrolladd"/>
+</TableLayout>
