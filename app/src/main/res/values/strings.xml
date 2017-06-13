@@ -22,7 +22,6 @@
     <string-array name="mettype">
         <item>Toner</item>
         <item>Ribbon</item>
-        <item>Cartrage</item>
         <item>Ink</item>
     </string-array>
 

@@ -1,23 +1,22 @@
 package com.rcis.CRM;
 
+import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
-import android.app.Fragment;
-import android.support.design.widget.Snackbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.Toast;
 
 public class ServiceFragment extends Fragment {
-    public ServiceFragment() {
-    }
-
     String cde[];
     boolean sdetails[];
+    public ServiceFragment() {
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, final Bundle savedInstanceState) {
@@ -38,6 +37,40 @@ public class ServiceFragment extends Fragment {
         final Switch swink = (Switch) rootView.findViewById(R.id.swinks);
         final EditText notes = (EditText) rootView.findViewById(R.id.txtservicenotes);
 
+        swprinters.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+
+                swribbon.setEnabled(b);
+                swtoner.setEnabled(b);
+                swink.setEnabled(b);
+            }
+        });
+
+        swtoner.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                swribbon.setEnabled(b ? false : true);
+                swink.setEnabled(b ? false : true);
+
+            }
+        });
+        swribbon.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                swtoner.setEnabled(b ? false : true);
+                swink.setEnabled(b ? false : true);
+
+            }
+        });
+        swink.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                swribbon.setEnabled(b ? false : true);
+                swtoner.setEnabled(b ? false : true);
+
+            }
+        });
         sdetails = new boolean[12];
         final Fragment[] f = new Fragment[1];
         final FragmentTransaction[] transaction = new FragmentTransaction[1];
@@ -57,10 +90,11 @@ public class ServiceFragment extends Fragment {
                     sdetails[6] = swweb.isChecked();
                     sdetails[7] = swcomputers.isChecked();
                     sdetails[8] = swprinters.isChecked();
-                    sdetails[9] = swtoner.isChecked();
-                    sdetails[10] = swribbon.isChecked();
-                    sdetails[11] = swink.isChecked();
-
+                    if (sdetails[8]) {
+                        sdetails[9] = swtoner.isChecked();
+                        sdetails[10] = swribbon.isChecked();
+                        sdetails[11] = swink.isChecked();
+                    }
                     if (f[0] != null) {
                         setRetainInstance(true);
                         cde = getArguments().getStringArray("cdata");

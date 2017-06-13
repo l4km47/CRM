@@ -1,53 +1,22 @@
 package com.rcis.CRM;
-
-import android.app.DialogFragment;
 import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.ProgressDialog;
-import android.content.Context;
-import android.content.DialogInterface;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.Snackbar;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.widget.VectorEnabledTintResources;
-import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.GridLayout;
 import android.widget.Spinner;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.NameValuePair;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.message.BasicNameValuePair;
-import org.json.JSONObject;
-
-import java.io.BufferedReader;
 import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Objects;
+import java.util.concurrent.ExecutionException;
 
 /**
  * Created by lakmal 2017-06-06
  */
 public class SetservicesFragment extends Fragment {
-    public SetservicesFragment() {
-    }
-
-    private EditText finalResult;
     String name;
     InputStream is = null;
     String result = null;
@@ -55,6 +24,10 @@ public class SetservicesFragment extends Fragment {
     boolean swdetails[];
     String cdata[];
     GridLayout grdm;
+    private EditText finalResult;
+
+    public SetservicesFragment() {
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -68,26 +41,77 @@ public class SetservicesFragment extends Fragment {
         final String s = getArguments().getString("snote");
         cdata = getArguments().getStringArray("cdata");
 
+        syncgetid runner;
+
+
+     /*   ProgressDialog progressDialog = ProgressDialog.show(getActivity(),
+                "Info",
+                "Wait for fatching data..");*/
+        int count;
         grdm = (GridLayout) rootView.findViewById(R.id.setmain);
         if (swdetails[0]) {
             GridLayout grdv = (GridLayout) View.inflate(
                     rootView.getContext(),
                     R.layout.grdcctv, null);
-            AsyncTaskRunner runner = new AsyncTaskRunner();
+            runner = new syncgetid();
             runner.execute("cctvid", "rcisl_clients_cctv");
-            finalResult = (EditText) grdv
-                    .findViewById(R.id.txtcctv);
+            try {
+
+                Integer cn;
+                cn = Integer.parseInt(runner.get().substring(runner.get().length() - 4, runner.get().length()));
+                cn++;
+                String cn_ = cn.toString();
+                if (cn.toString().length() == 1) {
+                    cn_ = "000" + cn;
+                }
+
+                if (cn.toString().length() == 2) {
+                    cn_ = "00" + cn;
+                }
+
+                if (cn.toString().length() == 3) {
+                    cn_ = "0" + cn;
+                }
+
+                ((EditText) grdv
+                        .findViewById(R.id.txtcctv)).setText("cc" + cn_);
+            } catch (InterruptedException | ExecutionException e) {
+                e.printStackTrace();
+            }
             grdm.addView(grdv);
+            count = 1;
         }
         if (swdetails[1]) {
             GridLayout grdv = (GridLayout) View.inflate(
                     rootView.getContext(),
                     R.layout.grdsolar, null);
-            AsyncTaskRunner runner = new AsyncTaskRunner();
+            runner = new syncgetid();
             runner.execute("solarid", "rcisl_clients_solar");
-            finalResult = (EditText) grdv
-                    .findViewById(R.id.txtsolarid);
+            try {
+
+                Integer cn;
+                cn = Integer.parseInt(runner.get().substring(runner.get().length() - 4, runner.get().length()));
+                cn++;
+                String cn_ = cn.toString();
+                if (cn.toString().length() == 1) {
+                    cn_ = "000" + cn;
+                }
+
+                if (cn.toString().length() == 2) {
+                    cn_ = "00" + cn;
+                }
+
+                if (cn.toString().length() == 3) {
+                    cn_ = "0" + cn;
+                }
+
+                ((EditText) grdv
+                        .findViewById(R.id.txtsolarid)).setText("sp" + cn_);
+            } catch (InterruptedException | ExecutionException e) {
+                e.printStackTrace();
+            }
             grdm.addView(grdv);
+            count = 2;
         }
 
         if (swdetails[2]) {
@@ -95,28 +119,73 @@ public class SetservicesFragment extends Fragment {
                     rootView.getContext(),
                     R.layout.grdintercom, null);
 
-            AsyncTaskRunner runner = new AsyncTaskRunner();
+            runner = new syncgetid();
             runner.execute("intercomid", "rcisl_clients_intercom");
-            finalResult = (EditText) grdv
-                    .findViewById(R.id.txtintercomid);
+            try {
+
+                Integer cn;
+                cn = Integer.parseInt(runner.get().substring(runner.get().length() - 4, runner.get().length()));
+                cn++;
+                String cn_ = cn.toString();
+                if (cn.toString().length() == 1) {
+                    cn_ = "000" + cn;
+                }
+
+                if (cn.toString().length() == 2) {
+                    cn_ = "00" + cn;
+                }
+
+                if (cn.toString().length() == 3) {
+                    cn_ = "0" + cn;
+                }
+
+                ((EditText) grdv
+                        .findViewById(R.id.txtintercomid)).setText("ic" + cn_);
+            } catch (InterruptedException | ExecutionException e) {
+                e.printStackTrace();
+            }
             grdm.addView(grdv);
+            count = 3;
         }
 
-        if (swdetails[3] && swdetails[4] == false) {
+        if (swdetails[3] && !swdetails[4]) {
             GridLayout grdv = (GridLayout) View.inflate(
                     rootView.getContext(),
                     R.layout.grdnetwork, null);
 
-            ((EditText) grdv
-                    .findViewById(R.id.txtnetid))
-                    .setText("nw001");
+            runner = new syncgetid();
+            runner.execute("netid", "rcisl_clients_network");
+            try {
+
+                Integer cn;
+                cn = Integer.parseInt(runner.get().substring(runner.get().length() - 4, runner.get().length()));
+                cn++;
+                String cn_ = cn.toString();
+                if (cn.toString().length() == 1) {
+                    cn_ = "000" + cn;
+                }
+
+                if (cn.toString().length() == 2) {
+                    cn_ = "00" + cn;
+                }
+
+                if (cn.toString().length() == 3) {
+                    cn_ = "0" + cn;
+                }
+
+                ((EditText) grdv
+                        .findViewById(R.id.txtnetid)).setText("nw" + cn_);
+            } catch (InterruptedException | ExecutionException e) {
+                e.printStackTrace();
+            }
             EditText editText = (EditText) grdv.findViewById(R.id.txtaccesspoints);
             editText.setEnabled(false);
             EditText editText1 = (EditText) grdv.findViewById(R.id.txtrepeaters);
             editText1.setEnabled(false);
             grdm.addView(grdv);
+            count = 4;
         }
-        if (swdetails[4] && swdetails[3] == false) {
+        if (swdetails[4] && !swdetails[3]) {
             GridLayout grdv = (GridLayout) View.inflate(
                     rootView.getContext(),
                     R.layout.grdnetwork, null);
@@ -128,22 +197,68 @@ public class SetservicesFragment extends Fragment {
             editText2.setEnabled(false);
             EditText editText3 = (EditText) grdv.findViewById(R.id.txtrouters);
             editText3.setEnabled(false);
-            ((EditText) grdv
-                    .findViewById(R.id.txtnetid))
-                    .setText("nw001");
+            runner = new syncgetid();
+            runner.execute("netid", "rcisl_clients_network");
+            try {
+
+                Integer cn;
+                cn = Integer.parseInt(runner.get().substring(runner.get().length() - 4, runner.get().length()));
+                cn++;
+                String cn_ = cn.toString();
+                if (cn.toString().length() == 1) {
+                    cn_ = "000" + cn;
+                }
+
+                if (cn.toString().length() == 2) {
+                    cn_ = "00" + cn;
+                }
+
+                if (cn.toString().length() == 3) {
+                    cn_ = "0" + cn;
+                }
+
+                ((EditText) grdv
+                        .findViewById(R.id.txtnetid)).setText("nw" + cn_);
+            } catch (InterruptedException | ExecutionException e) {
+                e.printStackTrace();
+            }
 
             grdm.addView(grdv);
+
+            count = 5;
         }
 
         if (swdetails[4] && swdetails[3]) {
             GridLayout grdv = (GridLayout) View.inflate(
                     rootView.getContext(),
                     R.layout.grdnetwork, null);
-            ((EditText) grdv
-                    .findViewById(R.id.txtnetid))
-                    .setText("nw001");
+            runner = new syncgetid();
+            runner.execute("netid", "rcisl_clients_network");
+            try {
+
+                Integer cn;
+                cn = Integer.parseInt(runner.get().substring(runner.get().length() - 4, runner.get().length()));
+                cn++;
+                String cn_ = cn.toString();
+                if (cn.toString().length() == 1) {
+                    cn_ = "000" + cn;
+                }
+
+                if (cn.toString().length() == 2) {
+                    cn_ = "00" + cn;
+                }
+
+                if (cn.toString().length() == 3) {
+                    cn_ = "0" + cn;
+                }
+                ((EditText) grdv
+                        .findViewById(R.id.txtnetid)).setText("nw" + cn_);
+            } catch (InterruptedException | ExecutionException e) {
+                e.printStackTrace();
+            }
 
             grdm.addView(grdv);
+            count = 6;
         }
 
 
@@ -152,46 +267,167 @@ public class SetservicesFragment extends Fragment {
                     rootView.getContext(),
                     R.layout.grdsoftware, null);
 
-            ((EditText) grdv
-                    .findViewById(R.id.txtsoftid))
-                    .setText("sp001");
+            runner = new syncgetid();
+            runner.execute("softid", "rcisl_clients_softwares");
+            try {
+
+                Integer cn;
+                cn = Integer.parseInt(runner.get().substring(runner.get().length() - 4, runner.get().length()));
+                cn++;
+                String cn_ = cn.toString();
+                if (cn.toString().length() == 1) {
+                    cn_ = "000" + cn;
+                }
+
+                if (cn.toString().length() == 2) {
+                    cn_ = "00" + cn;
+                }
+
+                if (cn.toString().length() == 3) {
+                    cn_ = "0" + cn;
+                }
+                ((EditText) grdv
+                        .findViewById(R.id.txtsoftid)).setText("sw" + cn_);
+            } catch (InterruptedException | ExecutionException e) {
+                e.printStackTrace();
+            }
+
             grdm.addView(grdv);
+            count = 7;
         }
         if (swdetails[6]) {
             GridLayout grdv = (GridLayout) View.inflate(
                     rootView.getContext(),
                     R.layout.grdweb, null);
 
-            ((EditText) grdv
-                    .findViewById(R.id.txtWebid))
-                    .setText("wb001");
+            runner = new syncgetid();
+            runner.execute("webid", "rcisl_clients_web");
+            try {
+
+                Integer cn;
+                cn = Integer.parseInt(runner.get().substring(runner.get().length() - 4, runner.get().length()));
+                cn++;
+                String cn_ = cn.toString();
+                if (cn.toString().length() == 1) {
+                    cn_ = "000" + cn;
+                }
+
+                if (cn.toString().length() == 2) {
+                    cn_ = "00" + cn;
+                }
+
+                if (cn.toString().length() == 3) {
+                    cn_ = "0" + cn;
+                }
+                ((EditText) grdv
+                        .findViewById(R.id.txtWebid)).setText("sw" + cn_);
+            } catch (InterruptedException | ExecutionException e) {
+                e.printStackTrace();
+            }
+
             grdm.addView(grdv);
+            count = 8;
         }
         if (swdetails[7]) {
             GridLayout grdv = (GridLayout) View.inflate(
                     rootView.getContext(),
                     R.layout.grdcomputers, null);
 
-            ((EditText) grdv
-                    .findViewById(R.id.txtcomid))
-                    .setText("com001");
+            runner = new syncgetid();
+            runner.execute("comid", "rcisl_clients_computers");
+            try {
+
+                Integer cn;
+                cn = Integer.parseInt(runner.get().substring(runner.get().length() - 4, runner.get().length()));
+                cn++;
+                String cn_ = cn.toString();
+                if (cn.toString().length() == 1) {
+                    cn_ = "000" + cn;
+                }
+
+                if (cn.toString().length() == 2) {
+                    cn_ = "00" + cn;
+                }
+
+                if (cn.toString().length() == 3) {
+                    cn_ = "0" + cn;
+                }
+                ((EditText) grdv
+                        .findViewById(R.id.txtcomid)).setText("co" + cn_);
+            } catch (InterruptedException | ExecutionException e) {
+                e.printStackTrace();
+            }
+
             grdm.addView(grdv);
+            count = 9;
         }
         if (swdetails[8]) {
+            GridLayout grdv = (GridLayout) View.inflate(
+                    rootView.getContext(),
+                    R.layout.grdprinters, null);
 
+            final EditText printid = (EditText) grdv
+                    .findViewById(R.id.txtprinterid);
+            final EditText model = (EditText) grdv.findViewById(R.id.txtprintermodel);
+            final Spinner type = (Spinner) grdv
+                    .findViewById(R.id.spinprintermettype);
+            final EditText typemodel = (EditText) grdv
+                    .findViewById(R.id.txtprintmetmodel);
+            final EditText notes = (EditText) grdv
+                    .findViewById(R.id.txtprintnotes);
+
+            runner = new syncgetid();
+            runner.execute("printerid", "rcisl_clients_printers");
+
+            try {
+
+                Integer cn;
+                cn = Integer.parseInt(runner.get().substring(runner.get().length() - 4, runner.get().length()));
+                cn++;
+                String cn_ = cn.toString();
+                if (cn.toString().length() == 1) {
+                    cn_ = "000" + cn;
+                }
+
+                if (cn.toString().length() == 2) {
+                    cn_ = "00" + cn;
+                }
+
+                if (cn.toString().length() == 3) {
+                    cn_ = "0" + cn;
+                }
+                printid.setText("pr" + cn_);
+            } catch (InterruptedException | ExecutionException e) {
+                e.printStackTrace();
+            }
+            if (swdetails[9]) {
+                type.setSelection(0);
+            }
+
+            if (swdetails[10]) {
+                type.setSelection(1);
+            }
+
+            if (swdetails[11]) {
+                type.setSelection(2);
+            }
+            grdm.addView(grdv);
+            count = 10;
         }
+       /* if (count == swdetails.length-1) {
+            if (progressDialog != null && progressDialog.isShowing())
+                progressDialog.dismiss();
+        }*/
+
         final Button finishbtn = (Button) rootView.findViewById(R.id.btnfinish);
         finishbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (swdetails[0]) {
-/* }
-                    else {
-                        Snackbar.make(view, "cloud not found", Snackbar.LENGTH_LONG)
-                                .setAction("Action", null).show();
-                    }*/
-                    //   txtcctvid.setText("cc0001");
-                }
+
+                Snackbar.make(view, "cloud not found", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+
+
             }
 
         });
@@ -200,88 +436,6 @@ public class SetservicesFragment extends Fragment {
     }
 
 
-    private class AsyncTaskRunner extends AsyncTask<String, String, String> {
-
-        private String resp;
-        ProgressDialog progressDialog;
-
-        @Override
-        protected String doInBackground(String... arg0) {
-            publishProgress("Wait..");
-            ArrayList<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
-
-            String column = arg0[0];
-            String table = arg0[1];
-            nameValuePairs.add(new BasicNameValuePair("column", column));
-            nameValuePairs.add(new BasicNameValuePair("table", table));
-            try {
-                HttpClient httpclient = new DefaultHttpClient();
-                HttpPost httppost = new HttpPost("http://192.168.1.100/crm/select/selectlastid.php");
-                httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
-                HttpResponse response = httpclient.execute(httppost);
-                HttpEntity entity = response.getEntity();
-                is = entity.getContent();
-                Log.e("pass 1", "connection success ");
-
-
-                try {
-                    BufferedReader reader = new BufferedReader
-                            (new InputStreamReader(is, "iso-8859-1"), 8);
-                    StringBuilder sb = new StringBuilder();
-                    while ((line = reader.readLine()) != null) {
-                        sb.append(line);
-                    }
-                    is.close();
-                    result = sb.toString();
-                    Log.e("pass 2", "connection success ");
-                } catch (Exception e) {
-                    Log.e("Fail 2", e.toString());
-                }
-
-                try {
-                    JSONObject json_data = new JSONObject(result);
-                    Log.e("pass 3", "connection success ");
-                    result = json_data.getString(column);
-
-                } catch (Exception e) {
-                    Log.e("Fail 3", e.toString());
-                }
-            } catch (Exception e) {
-                Log.e("Fail 0", " error connecting to server " + e.toString());
-            }
-
-            return result;
-        }
-
-
-        @Override
-        protected void onPostExecute(String result) {
-            // execution of result of Long time consuming operation
-            progressDialog.dismiss();
-
-            finalResult.setText(result);
-        }
-
-
-        @Override
-        protected void onPreExecute() {
-            progressDialog = ProgressDialog.show(getActivity(),
-                    "Info",
-                    "Wait for fetching data..");
-        }
-
-
-        @Override
-        protected void onCancelled() {
-            progressDialog.dismiss();
-        }
-
-        @Override
-        protected void onProgressUpdate(String... text) {
-            finalResult.setText(text[0]);
-
-        }
-    }
 }
 
 

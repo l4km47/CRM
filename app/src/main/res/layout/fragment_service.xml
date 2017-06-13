@@ -20,9 +20,14 @@
         android:layout_height="wrap_content"
         android:textAlignment="textEnd">
 
+    </ScrollView>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
         <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_column="18"
             android:columnCount="2">
 
 
@@ -212,6 +217,7 @@
                 android:layout_column="1"
                 android:layout_row="9"
 
+                android:enabled="false"
                 android:textOff="No"
                 android:textOn="Yes" />
 
@@ -231,6 +237,7 @@
                 android:layout_column="1"
                 android:layout_row="10"
 
+                android:enabled="false"
                 android:textOff="No"
                 android:textOn="Yes" />
 
@@ -250,6 +257,7 @@
                 android:layout_column="1"
                 android:layout_row="12"
 
+                android:enabled="false"
                 android:textOff="No"
                 android:textOn="Yes" />
 
@@ -271,5 +279,5 @@
                 android:hint="Extra informations" />
 
         </GridLayout>
-    </ScrollView>
+    </TableRow>
 </TableLayout>
