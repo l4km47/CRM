@@ -1,7 +1,9 @@
-<ScrollView android:layout_width="fill_parent"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="wrap_content"
     android:textAlignment="textEnd"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:layout_width="fill_parent"
+    tools:targetApi="jelly_bean_mr1">
 
     <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
@@ -9,29 +11,47 @@
         android:columnCount="2">
 
         <TextView
-            android:id="@+id/lblid"
             android:layout_gravity="fill_horizontal"
             android:layout_row="0"
-            android:text="Client ID :"
-            android:textAlignment="textEnd" />
+            android:text="Client ID   :  "
+            android:textAlignment="textEnd"
+            tools:targetApi="jelly_bean_mr1" />
 
-        <EditText
+        <TextView
             android:id="@+id/txtid"
             android:layout_gravity="fill_horizontal"
-            android:enabled="false"
             android:singleLine="true"
-            android:text="cp0000" />
+            android:layout_height="40dp"
+            android:text="cp0001"
+            android:textSize="16dp" />
 
         <TextView
             android:layout_gravity="fill_horizontal"
             android:layout_row="0"
-            android:text="First Name :"
+            android:text="Section   :  "
             android:textAlignment="textEnd" />
 
-        <EditText
-            android:id="@+id/txtfname"
+
+        <Spinner
+            android:id="@+id/spingp"
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_row="0"
+            android:entries="@array/gp"
+            android:spinnerMode="dropdown" />
+
+        <TextView
             android:layout_gravity="fill_horizontal"
+            android:layout_row="0"
+            android:text="First Name   :  "
+            android:textAlignment="textEnd" />
+
+        <com.rcis.CRM.CustomEditText
+            android:id="@+id/txtfname"
+            android:layout_width="match_parent"
+            android:layout_gravity="fill_horizontal"
+
             android:hint="Rohitha"
             android:inputType="textPersonName"
             android:singleLine="true" />
@@ -39,10 +59,10 @@
         <TextView
             android:layout_gravity="fill_horizontal"
             android:layout_row="0"
-            android:text="Last Name :"
+            android:text="Last Name   :  "
             android:textAlignment="textEnd" />
 
-        <EditText
+        <com.rcis.CRM.CustomEditText
             android:id="@+id/txtlname"
             android:layout_gravity="fill_horizontal"
             android:hint="Jayappriya"
@@ -52,175 +72,170 @@
         <TextView
             android:layout_gravity="fill_horizontal"
             android:layout_row="0"
-            android:text="Address :"
+            android:text="Address   :  "
             android:textAlignment="textEnd" />
 
-        <EditText
+        <com.rcis.CRM.CustomEditText
             android:id="@+id/txtaddress1"
             android:layout_gravity="fill_horizontal"
             android:hint="Address line 1"
             android:inputType="textPostalAddress"
-
+            android:layout_width="match_parent"
 
             android:singleLine="true" />
 
         <TextView
             android:layout_gravity="fill_horizontal"
             android:layout_row="0"
-            android:text=" :"
+            android:text="   :  "
             android:textAlignment="textEnd" />
 
-        <EditText
+        <com.rcis.CRM.CustomEditText
             android:id="@+id/txtaddress2"
             android:layout_gravity="fill_horizontal"
             android:hint="Address line 2"
             android:inputType="textPostalAddress"
+            android:layout_width="match_parent"
             android:singleLine="true" />
 
         <TextView
             android:layout_gravity="fill_horizontal"
             android:layout_row="0"
-            android:text=" :"
+            android:text="   :  "
             android:textAlignment="textEnd" />
 
-        <EditText
+        <com.rcis.CRM.CustomEditText
             android:id="@+id/txtaddress3"
             android:layout_gravity="fill_horizontal"
             android:hint="Address line 3"
             android:inputType="textPostalAddress"
+            android:layout_width="match_parent"
             android:singleLine="true" />
 
         <TextView
             android:layout_gravity="fill_horizontal"
             android:layout_row="0"
-            android:text=" Mobile number :"
+            android:text=" Mobile   :  "
             android:textAlignment="textEnd" />
 
-        <EditText
+        <com.rcis.CRM.CustomEditText
             android:id="@+id/txtp1"
             android:layout_gravity="fill_horizontal"
             android:hint="Personal"
 
             android:inputType="phone"
+            android:layout_width="match_parent"
             android:singleLine="true" />
 
         <TextView
             android:layout_gravity="fill_horizontal"
             android:layout_row="0"
-            android:text=" :"
+            android:text="   :  "
             android:textAlignment="textEnd" />
 
-        <EditText
+        <com.rcis.CRM.CustomEditText
             android:id="@+id/txtp2"
             android:layout_gravity="fill_horizontal"
             android:hint="Work"
             android:inputType="phone"
+            android:layout_width="match_parent"
             android:singleLine="true" />
 
         <TextView
             android:layout_gravity="fill_horizontal"
             android:layout_row="0"
-            android:text="Fax :"
+            android:text="Fax   :  "
             android:textAlignment="textEnd" />
 
-        <EditText
+        <com.rcis.CRM.CustomEditText
             android:id="@+id/txtfax"
             android:layout_gravity="fill_horizontal"
             android:hint="Fax number"
             android:inputType="phone"
+            android:layout_width="match_parent"
             android:singleLine="true" />
 
         <TextView
             android:layout_gravity="fill_horizontal"
             android:layout_row="0"
-            android:text="Email :"
+            android:text="Email   :  "
             android:textAlignment="textEnd" />
 
-        <EditText
+        <com.rcis.CRM.CustomEditText
             android:id="@+id/txtemail"
             android:layout_gravity="fill_horizontal"
             android:hint="user@example.com"
             android:inputType="textEmailAddress"
+            android:layout_width="match_parent"
             android:singleLine="true" />
 
         <TextView
             android:layout_gravity="fill_horizontal"
             android:layout_row="0"
-            android:text="Company :"
+            android:text="Company   :  "
             android:textAlignment="textEnd" />
 
-        <EditText
+        <com.rcis.CRM.CustomEditText
             android:id="@+id/txtcompany"
             android:layout_gravity="fill_horizontal"
             android:hint="RCIS"
             android:inputType="text"
+            android:layout_width="match_parent"
             android:singleLine="true" />
 
-        <TextView
-            android:id="@+id/lblpg"
-            android:layout_gravity="fill_horizontal"
-            android:layout_row="0"
-            android:text="Section :"
-            android:textAlignment="textEnd" />
 
-
-        <Spinner
-            android:id="@+id/spingp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_row="0"
-            android:entries="@array/gp"
-            android:spinnerMode="dropdown"
-            android:layout_margin="8dp" />
 
         <TextView
             android:layout_gravity="fill_horizontal"
             android:layout_row="0"
-            android:text="Title :"
+            android:text="Title   :  "
             android:textAlignment="textEnd" />
 
-        <EditText
+        <com.rcis.CRM.CustomEditText
             android:id="@+id/txttitle"
             android:layout_gravity="fill_horizontal"
             android:hint="(ex: manager)"
+            android:layout_width="match_parent"
             android:singleLine="true" />
 
 
         <TextView
             android:layout_gravity="fill_horizontal"
             android:layout_row="0"
-            android:text="Zone :"
+            android:text="Zone   :  "
             android:textAlignment="textEnd" />
 
-        <EditText
+        <com.rcis.CRM.CustomEditText
             android:id="@+id/txtzone"
             android:layout_gravity="fill_horizontal"
             android:hint="(ex: Hambantota)"
+            android:layout_width="match_parent"
             android:singleLine="true" />
 
         <TextView
             android:layout_gravity="fill_horizontal"
             android:layout_row="0"
-            android:text="Rout :"
+            android:text="Rout   :  "
             android:textAlignment="textEnd" />
 
-        <EditText
+        <com.rcis.CRM.CustomEditText
             android:id="@+id/txtrout"
             android:layout_gravity="fill_horizontal"
             android:hint="(ex: infront of school)"
+            android:layout_width="match_parent"
             android:singleLine="true" />
 
         <TextView
             android:layout_gravity="fill_horizontal"
             android:layout_row="0"
-            android:text="Notes :"
+            android:text="Notes   :  "
             android:textAlignment="textEnd" />
 
-        <EditText
+        <com.rcis.CRM.CustomEditText
             android:id="@+id/txtNotes"
-            android:layout_gravity="fill_horizontal"
             android:hint="about relation or something"
             android:inputType="textImeMultiLine"
+            android:layout_width="match_parent"
             android:singleLine="true" />
 
 

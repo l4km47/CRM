@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/grdcomputers"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -12,11 +11,10 @@
             android:layout_column="0"
             android:text="Computer id :" />
 
-        <EditText
+        <TextView
             android:id="@+id/txtcomid"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:enabled="false" />
+            android:layout_height="wrap_content" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -25,10 +23,10 @@
             android:layout_row="1"
             android:text="Model :" />
 
-        <EditText
-            android:id="@+id/txtcommodel"
-            android:layout_width="wrap_content"
+        <com.rcis.CRM.CustomEditText
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:drawableRight="@drawable/delete"
             android:hint="HP-7900" />
 
         <TextView
@@ -38,12 +36,12 @@
             android:layout_row="2"
             android:text="Ram :" />
 
-        <EditText
-            android:id="@+id/txtcomram"
+        <com.rcis.CRM.CustomEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_column="1"
             android:layout_row="2"
+            android:drawableRight="@drawable/delete"
             android:hint="2GB" />
 
         <TextView
@@ -53,12 +51,12 @@
             android:layout_row="3"
             android:text="Harddisk :" />
 
-        <EditText
-            android:id="@+id/txtcomhdd"
+        <com.rcis.CRM.CustomEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_column="1"
             android:layout_row="3"
+            android:drawableRight="@drawable/delete"
             android:hint="500Gb" />
 
         <TextView
@@ -68,12 +66,12 @@
             android:layout_row="4"
             android:text="Proccessor :" />
 
-        <EditText
-            android:id="@+id/txtcomproccessor"
+        <com.rcis.CRM.CustomEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_column="1"
             android:layout_row="4"
+            android:drawableRight="@drawable/delete"
             android:hint="intel q9550 2.4Ghz" />
 
 
@@ -84,12 +82,12 @@
             android:layout_row="6"
             android:text="UPS :" />
 
-        <EditText
-            android:id="@+id/txtcomups"
+        <com.rcis.CRM.CustomEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_column="1"
             android:layout_row="6"
+            android:drawableRight="@drawable/delete"
             android:hint="Prolink u7200" />
 
 
@@ -100,12 +98,12 @@
             android:layout_row="7"
             android:text="Other :" />
 
-        <EditText
-            android:id="@+id/txtcomother"
+        <com.rcis.CRM.CustomEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_column="1"
             android:layout_row="7"
+            android:drawableRight="@drawable/delete"
             android:hint="19'' moniter" />
 
         <TextView
@@ -115,12 +113,12 @@
             android:layout_row="8"
             android:text="Notes :" />
 
-        <EditText
-            android:id="@+id/txtcomnotes"
-            android:layout_width="wrap_content"
+        <com.rcis.CRM.CustomEditText
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_column="1"
             android:layout_row="8"
+            android:drawableRight="@drawable/delete"
             android:hint="about site/maintance" />
 
     </GridLayout>

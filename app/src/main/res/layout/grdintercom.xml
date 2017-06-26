@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/grdintercom">
+    android:layout_height="match_parent">
 
     <GridLayout android:layout_margin="6dp">
 
@@ -12,11 +11,10 @@
             android:layout_column="0"
             android:text="Intercom id :" />
 
-        <EditText
+        <TextView
             android:id="@+id/txtintercomid"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:enabled="false"/>
+            android:layout_height="wrap_content" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -25,9 +23,10 @@
             android:layout_row="1"
             android:text="Analog :" />
 
-        <EditText
+        <com.rcis.CRM.CustomEditText
             android:id="@+id/txtanalog"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
+            android:drawableRight="@drawable/delete"
             android:layout_height="wrap_content"
             android:hint=""
             android:inputType="number"/>
@@ -39,8 +38,9 @@
             android:layout_row="2"
             android:text="Digital :" />
 
-        <EditText
-            android:id="@+id/txtdigital"
+        <com.rcis.CRM.CustomEditText
+            android:id="@+id/txtdegital"
+            android:drawableRight="@drawable/delete"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_column="1"
@@ -51,15 +51,17 @@
             android:layout_height="wrap_content"
             android:layout_column="0"
             android:layout_row="3"
-            android:hint="Notes :" />
+            android:hint="Direct lines :" />
 
-        <EditText
-            android:id="@+id/txtkeyphone"
-            android:layout_width="wrap_content"
+        <com.rcis.CRM.CustomEditText
+            android:id="@+id/txtdirectlines"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_column="1"
             android:layout_row="3"
             android:hint=""
+            android:drawableRight="@drawable/delete"
+
             android:inputType="number"
             />
         <TextView
@@ -69,9 +71,10 @@
             android:layout_row="4"
             android:hint="Notes :" />
 
-        <EditText
-            android:id="@+id/txtcctvnotes"
-            android:layout_width="wrap_content"
+        <com.rcis.CRM.CustomEditText
+            android:id="@+id/txtintercomnotes"
+            android:layout_width="match_parent"
+            android:drawableRight="@drawable/delete"
             android:layout_height="wrap_content"
             android:layout_column="1"
             android:layout_row="4"

@@ -26,7 +26,8 @@ dependencies {
     compile 'com.android.support:appcompat-v7:24.1.1'
     compile 'com.android.support:design:24.1.1'
     compile 'com.android.support:support-v4:24.1.1'
-    compile 'com.android.support:recyclerview-v7:24.1.1'
+    compile 'com.github.aakira:expandable-layout:1.6.0@aar'
     compile 'org.jbundle.util.osgi.wrapped:org.jbundle.util.osgi.wrapped.org.apache.http.client:4.1.2'
 
+    compile 'com.google.android.gms:play-services-appindexing:8.1.0'
 }

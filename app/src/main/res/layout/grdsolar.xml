@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/grdsolar"
->
+    android:layout_height="match_parent">
 
     <GridLayout android:layout_margin="6dp">
 
@@ -13,11 +11,10 @@
             android:layout_column="0"
             android:text="Solar id :" />
 
-        <EditText
+        <TextView
             android:id="@+id/txtsolarid"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:enabled="false"/>
+            android:layout_height="wrap_content" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -26,13 +23,15 @@
             android:layout_row="1"
             android:text="Watt :" />
 
-        <EditText
+        <com.rcis.CRM.CustomEditText
             android:id="@+id/txtwatt"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
+            android:drawableRight="@drawable/delete"
             android:layout_height="wrap_content"
             android:hint="ex(1000w)" />
 
         <TextView
+            android:layout_marginTop="8dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_column="0"
@@ -40,7 +39,8 @@
             android:text="Inverter type :" />
 
         <Spinner
-            android:id="@+id/spincctvchanels"
+            android:id="@+id/spninvtype"
+            android:layout_margin="8dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_column="1"
@@ -53,14 +53,31 @@
             android:layout_height="wrap_content"
             android:layout_column="0"
             android:layout_row="3"
-            android:hint="Notes :" />
+            android:hint="Capacity :" />
 
-        <EditText
-            android:id="@+id/txtcctvnotes"
-            android:layout_width="wrap_content"
+        <com.rcis.CRM.CustomEditText
+            android:id="@+id/txtinvcap"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_column="1"
             android:layout_row="3"
+            android:drawableRight="@drawable/delete"
+            android:hint="5kw" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="4"
+            android:hint="Notes :" />
+
+        <com.rcis.CRM.CustomEditText
+            android:id="@+id/txtsolarnotes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_row="4"
+            android:drawableRight="@drawable/delete"
             android:hint="about site/maintance" />
 
     </GridLayout>

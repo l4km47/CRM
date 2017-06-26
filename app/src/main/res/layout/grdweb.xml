@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/grdWeb"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -13,13 +12,12 @@
             android:layout_row="0"
             android:text="Website id :" />
 
-        <EditText
+        <TextView
             android:id="@+id/txtWebid"
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_column="1"
-            android:layout_row="0"
-            android:enabled="false" />
+            android:layout_row="0" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -29,12 +27,12 @@
 
             android:text="Catogary :" />
 
-        <EditText
-            android:id="@+id/txtWebcatagory"
-            android:layout_width="wrap_content"
+        <com.rcis.CRM.CustomEditText
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_column="1"
-            android:layout_row="1" />
+            android:layout_row="1"
+            android:drawableRight="@drawable/delete" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -43,12 +41,12 @@
             android:layout_row="3"
             android:text="Notes :" />
 
-        <EditText
-            android:id="@+id/txtwebnotes"
-            android:layout_width="wrap_content"
+        <com.rcis.CRM.CustomEditText
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_column="1"
             android:layout_row="3"
+            android:drawableRight="@drawable/delete"
             android:hint="about site/maintance" />
     </GridLayout>
 

@@ -2,7 +2,6 @@ package com.rcis.CRM;
 
 import android.app.Fragment;
 import android.app.FragmentTransaction;
-import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,11 +9,11 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.Toast;
-
-import java.util.concurrent.ExecutionException;
+import android.widget.TextView;
 
 public class AddFragment extends Fragment {
+    public String cn_;
+
     public AddFragment() {
     }
 
@@ -22,44 +21,18 @@ public class AddFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, final Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_add, container, false);
 
-        final Button next;
+       /* final Button next;
         final String cdetails[] = new String[14];
 
-        final EditText id = (EditText) rootView.findViewById(R.id.txtid);
+        final TextView id = (TextView) rootView.findViewById(R.id.txtid);
+        next = (Button) rootView.findViewById(R.id.btnnext);
+
         try {
-            syncgetid runner = new syncgetid();
-            ProgressDialog pd = new ProgressDialog(getActivity());
-            pd.setMessage("Fatching data..");
-            pd.setTitle("Info");
-            pd.show();
-            runner.execute("c_no", "rcisl_clients_details");
 
-            if (runner.get() != null) {
-                Integer cn;
-                cn = Integer.parseInt(runner.get().substring(runner.get().length() - 4, runner.get().length()));
-                cn++;
-                String cn_ = cn.toString();
-                if (cn.toString().length() == 1) {
-                    cn_ = "000" + cn;
-                }
-
-                if (cn.toString().length() == 2) {
-                    cn_ = "00" + cn;
-                }
-
-                if (cn.toString().length() == 3) {
-                    cn_ = "0" + cn;
-                }
-                id.setText("c" + runner.get().substring(1, 2) + cn_);
-                Thread.sleep(100);
-                pd.dismiss();
-
-            } else {
-                pd.dismiss();
-
-                Toast.makeText(getActivity(), "Error fetching information", Toast.LENGTH_LONG).show();
-            }
-        } catch (InterruptedException | ExecutionException e) {
+            id.setText(ServerTasks.get.SetId("C", "c_no", "rcisl_clients_details"));
+            next.setEnabled(true);
+        } catch (Exception e) {
+            next.setEnabled(false);
             e.printStackTrace();
         }
 
@@ -78,6 +51,8 @@ public class AddFragment extends Fragment {
 
         final EditText company = (EditText) rootView.findViewById(R.id.txtcompany);
         final Spinner section = (Spinner) rootView.findViewById(R.id.spingp);
+
+
         final EditText title = (EditText) rootView.findViewById(R.id.txttitle);
 
         final EditText zone = (EditText) rootView.findViewById(R.id.txtzone);
@@ -88,22 +63,21 @@ public class AddFragment extends Fragment {
 
         final Fragment[] f = new Fragment[1];
         final FragmentTransaction[] transaction = new FragmentTransaction[1];
-        next = (Button) rootView.findViewById(R.id.btnnext);
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 transaction[0] = getFragmentManager().beginTransaction();
                 f[0] = new ServiceFragment();
-                cdetails[0] = id.getText().toString().trim().isEmpty() ? "no data" : id.getText().toString();
-                cdetails[1] = fname.getText().toString().trim().isEmpty() ? "no data" : fname.getText().toString();
-                cdetails[2] = lname.getText().toString().trim().isEmpty() ? "no data" : lname.getText().toString();
+                cdetails[0] = id.getText().toString();
+                cdetails[1] = fname.getText().toString().trim();
+                cdetails[2] = lname.getText().toString().trim();
                 cdetails[3] = address1.getText().toString().trim() + " ," + address2.getText().toString().trim() + " ," + address3.getText().toString().trim();
                 cdetails[4] = mobilep.getText().toString().trim();
-                cdetails[5] = mobilew.getText().toString().trim().isEmpty() ? "" : mobilew.getText().toString();
-                cdetails[6] = fax.getText().toString().trim();
+                cdetails[5] = mobilew.getText().toString().trim().isEmpty() ? "0" : mobilew.getText().toString();
+                cdetails[6] = fax.getText().toString().trim().isEmpty() ? "0" : fax.getText().toString();
                 cdetails[7] = email.getText().toString().trim();
-                cdetails[8] = company.getText().toString().trim();
-                cdetails[9] = section.getSelectedItem().toString();
+                cdetails[8] = section.getSelectedItem().toString();
+                cdetails[9] = company.getText().toString().trim();
                 cdetails[10] = title.getText().toString().trim();
                 cdetails[11] = zone.getText().toString().trim();
                 cdetails[12] = rout.getText().toString().trim();
@@ -125,7 +99,7 @@ public class AddFragment extends Fragment {
                     transaction[0].commit();
                 }
             }
-        });
+        });*/
         return rootView;
     }
 }

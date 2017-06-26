@@ -3,13 +3,25 @@
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nextbtn"><![CDATA[Next >]]></string>
+    <string name="home">Home</string>
+    <string name="add_client">Add Client</string>
+    <string name="search">Search</string>
+    <string name="no_connection">No connection</string>
+    <string name="next"><![CDATA[Next >]]></string>
 
     <string-array name="channels_arrays">
         <item>4ch</item>
         <item>8ch</item>
         <item>16ch</item>
         <item>24ch</item>
+    </string-array>
+    <string-array name="model_arrays">
+        <item>HD</item>
+        <item>AHD</item>
+        <item>HDCVI</item>
+        <item>IP</item>
+        <item>TVL</item>
+        <item>WIFI</item>
     </string-array>
 
     <string-array name="invetertypes">
@@ -26,9 +38,36 @@
     </string-array>
 
     <string-array name="gp">
-        <item>Goverment</item>
+        <item>Government</item>
         <item>Private</item>
     </string-array>
+    <string name="title_activity_login">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="first_name">First name</string>
+    <string name="last_name">Last name</string>
+    <string name="address">Address</string>
+    <string name="phone">Phone</string>
+    <string name="contacts">Contacts</string>
+    <string name="mobile">Mobile</string>
+    <string name="work">Work</string>
+    <string name="email">Email</string>
+    <string name="fax">Fax</string>
+    <string name="organization">Organization</string>
+    <string name="company">Company</string>
+    <string name="title">Title</string>
+    <string name="section">Section</string>
 
 
 </resources>

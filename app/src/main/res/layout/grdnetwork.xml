@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/grdnetwork"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
->
+    android:layout_height="match_parent">
 
     <GridLayout android:layout_margin="6dp">
 
@@ -14,13 +12,12 @@
             android:layout_row="0"
             android:text="Network id :" />
 
-        <EditText
+        <TextView
+            android:layout_column="1"
             android:id="@+id/txtnetid"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_column="1"
-            android:layout_row="0"
-            android:enabled="false" />
+            android:layout_row="0" />
 
 
         <TextView
@@ -30,9 +27,10 @@
             android:layout_row="2"
             android:text="Switchs :" />
 
-        <EditText
+        <com.rcis.CRM.CustomEditText
+            android:layout_width="match_parent"
             android:id="@+id/txtswitchs"
-            android:layout_width="wrap_content"
+            android:drawableRight="@drawable/delete"
             android:layout_height="wrap_content"
             android:layout_column="1"
             android:layout_row="2"
@@ -46,9 +44,10 @@
             android:layout_row="3"
             android:text="Patch panels :" />
 
-        <EditText
+        <com.rcis.CRM.CustomEditText
+            android:layout_width="match_parent"
             android:id="@+id/txtpatchpanels"
-            android:layout_width="wrap_content"
+            android:drawableRight="@drawable/delete"
             android:layout_height="wrap_content"
             android:layout_column="1"
             android:layout_row="3"
@@ -62,9 +61,10 @@
             android:layout_row="4"
             android:text="Network points :" />
 
-        <EditText
+        <com.rcis.CRM.CustomEditText
+            android:layout_width="match_parent"
             android:id="@+id/txtnetpoints"
-            android:layout_width="wrap_content"
+            android:drawableRight="@drawable/delete"
             android:layout_height="wrap_content"
             android:layout_column="1"
             android:layout_row="4"
@@ -78,9 +78,10 @@
             android:layout_row="5"
             android:text="Routers :" />
 
-        <EditText
+        <com.rcis.CRM.CustomEditText
+            android:layout_width="match_parent"
             android:id="@+id/txtrouters"
-            android:layout_width="wrap_content"
+            android:drawableRight="@drawable/delete"
             android:layout_height="wrap_content"
             android:layout_column="1"
             android:layout_row="5"
@@ -94,9 +95,10 @@
             android:layout_row="6"
             android:text="Acesspoints :" />
 
-        <EditText
+        <com.rcis.CRM.CustomEditText
+            android:layout_width="match_parent"
             android:id="@+id/txtaccesspoints"
-            android:layout_width="wrap_content"
+            android:drawableRight="@drawable/delete"
             android:layout_height="wrap_content"
             android:layout_column="1"
             android:layout_row="6"
@@ -110,12 +112,14 @@
             android:layout_row="7"
             android:text="Repeaters :" />
 
-        <EditText
+        <com.rcis.CRM.CustomEditText
             android:id="@+id/txtrepeaters"
-            android:layout_width="wrap_content"
+
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_column="1"
             android:layout_row="7"
+            android:drawableRight="@drawable/delete"
             android:hint=""
             android:inputType="number" />
 
@@ -127,9 +131,9 @@
             android:layout_row="8"
             android:text="Notes :" />
 
-        <EditText
+        <com.rcis.CRM.CustomEditText
             android:id="@+id/txtnetnotes"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_column="1"
             android:layout_row="8"

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/grdprinters"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -12,11 +11,10 @@
             android:layout_column="0"
             android:text="Printer id :" />
 
-        <EditText
+        <TextView
             android:id="@+id/txtprinterid"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:enabled="false" />
+            android:layout_height="wrap_content" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -25,10 +23,11 @@
             android:layout_row="1"
             android:text="Model :" />
 
-        <EditText
+        <com.rcis.CRM.CustomEditText
             android:id="@+id/txtprintermodel"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:drawableRight="@drawable/delete"
             android:hint="HP-1102" />
 
         <TextView
@@ -47,8 +46,7 @@
             android:layout_row="2"
             android:enabled="false"
             android:entries="@array/mettype"
-            android:spinnerMode="dropdown"
-           />
+            android:spinnerMode="dropdown" />
 
 
         <TextView
@@ -58,12 +56,14 @@
             android:layout_row="3"
             android:text="Meterial model :" />
 
-        <EditText
+        <com.rcis.CRM.CustomEditText
             android:id="@+id/txtprintmetmodel"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_column="1"
             android:layout_row="3"
+            android:drawableRight="@drawable/delete"
             android:hint="85A" />
 
 
@@ -74,12 +74,13 @@
             android:layout_row="8"
             android:text="Notes :" />
 
-        <EditText
+        <com.rcis.CRM.CustomEditText
             android:id="@+id/txtprintnotes"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_column="1"
             android:layout_row="8"
+            android:drawableRight="@drawable/delete"
             android:hint="about site/maintance" />
 
     </GridLayout>
